@@ -1,0 +1,144 @@
+{
+  "identity": {
+    "persona": "E1: The Anti-AI Designer",
+    "philosophy": "Fusion over Imitation. Emotion First. Imperfection is Human.",
+    "concept": "The Digital Scrapbook",
+    "vibe": "Playful, Tactile, Nostalgic, Organized Chaos"
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Fredoka, sans-serif",
+      "weights": ["600", "700"],
+      "usage": "All section titles, card headers, and hero text. Use tight tracking.",
+      "google_font_import": "https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap"
+    },
+    "body": {
+      "font_family": "Quicksand, sans-serif",
+      "weights": ["400", "500", "600"],
+      "usage": "Paragraphs, inputs, labels, and list items."
+    }
+  },
+  "colors": {
+    "palette_name": "Confetti Pop",
+    "strategy": "Archetype 3: Pastel & Soft with Neo-Brutalist Twist",
+    "base": {
+      "background": "#FFFDF5",
+      "foreground": "#2D2A2E",
+      "card": "#FFFFFF",
+      "card_foreground": "#2D2A2E"
+    },
+    "brand": {
+      "primary": "#FF6B6B",
+      "primary_foreground": "#FFFFFF",
+      "secondary": "#FFD93D",
+      "secondary_foreground": "#2D2A2E",
+      "accent": "#4D96FF",
+      "accent_foreground": "#FFFFFF",
+      "success": "#6BCB77",
+      "warning": "#FF9F43"
+    },
+    "twist": "Use high-contrast black borders (2px) and hard shadows to prevent the pastels from looking 'washed out'. The UI should feel like a sticker book."
+  },
+  "visual_enhancers": {
+    "shadows": {
+      "hard": "4px 4px 0px 0px #000000",
+      "soft": "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+      "button": "0px 4px 0px 0px rgba(0,0,0,0.2)"
+    },
+    "borders": {
+      "width": "2px",
+      "color": "#000000",
+      "radius": "12px"
+    },
+    "textures": {
+      "background_pattern": "radial-gradient(#E5E5E5 1px, transparent 1px)",
+      "background_size": "20px 20px",
+      "noise_overlay": "Use a fixed noise opacity of 0.03 on top of solid colors to add paper feel."
+    }
+  },
+  "layout_strategy": {
+    "grid_system": "The Bento Scrapbook",
+    "rules": [
+      "Avoid perfect symmetry. Rotate elements slightly (-1deg to 1deg) on hover.",
+      "Use 'Masonry' style layouts for the gift feed.",
+      "Containers should look like physical cards or polaroids."
+    ],
+    "spacing": "Generous. Use p-6 or p-8 for cards. Gap-6 for grids."
+  },
+  "components": {
+    "buttons": {
+      "style": "Candy Button",
+      "classes": "rounded-full border-2 border-black bg-primary text-white font-bold px-6 py-3 shadow-[2px_2px_0px_0px_#000000] hover:translate-y-1 hover:shadow-none transition-all active:translate-y-1"
+    },
+    "cards": {
+      "style": "Sticker Card",
+      "classes": "bg-white border-2 border-black rounded-xl p-6 shadow-[4px_4px_0px_0px_#000000] hover:-rotate-1 transition-transform duration-300"
+    },
+    "inputs": {
+      "style": "Chunky Input",
+      "classes": "border-2 border-black rounded-lg px-4 py-3 focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:outline-none font-medium bg-white"
+    }
+  },
+  "motion": {
+    "type": "Playful Spring",
+    "transition": "type: 'spring', stiffness: 300, damping: 20",
+    "micro_interactions": [
+      "Hover: Slight rotation or scale up (1.02)",
+      "Click: Scale down (0.95)",
+      "Load: Staggered fade-in with slide-up"
+    ]
+  },
+  "images": {
+    "avatars": [
+      {
+        "url": "https://images.unsplash.com/photo-1591491527716-e0b1ee67fcc3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxwbGF5ZnVsJTIwM2QlMjBhdmF0YXIlMjBraWR8ZW58MHx8fHwxNzY2OTY2MjU0fDA&ixlib=rb-4.1.0&q=85",
+        "alt": "Boy jumping",
+        "category": "avatar"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1561229474-1f22e022dfd4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwyfHxwbGF5ZnVsJTIwM2QlMjBhdmF0YXIlMjBraWR8ZW58MHx8fHwxNzY2OTY2MjU0fDA&ixlib=rb-4.1.0&q=85",
+        "alt": "Figurine",
+        "category": "avatar"
+      }
+    ],
+    "gifts": [
+      {
+        "url": "https://images.unsplash.com/photo-1667864811044-b0bcd9ed4a46?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjQyMTd8MHwxfHNlYXJjaHwxfHxjb2xvcmZ1bCUyMGdpZnQlMjBib3glMjB3cmFwcGVkfGVufDB8fHx8MTc2Njk2NjI1N3ww&ixlib=rb-4.1.0&q=85",
+        "alt": "Pink Gift",
+        "category": "gift"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1610334186047-5722021ed028?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjQyMTd8MHwxfHNlYXJjaHwyfHxjb2xvcmZ1bCUyMGdpZnQlMjBib3glMjB3cmFwcGVkfGVufDB8fHx8MTc2Njk2NjI1N3ww&ixlib=rb-4.1.0&q=85",
+        "alt": "Blue Gift",
+        "category": "gift"
+      }
+    ],
+    "decorations": [
+      {
+        "url": "https://images.unsplash.com/photo-1601676852981-9e04461ddc35?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjQyMTd8MHwxfHNlYXJjaHwxfHxiaXJ0aGRheSUyMHBhcnR5JTIwYmFsbG9vbnMlMjBjb25mZXR0aXxlbnwwfHx8fDE3NjY5NjYyNTl8MA&ixlib=rb-4.1.0&q=85",
+        "alt": "Balloons",
+        "category": "hero_bg"
+      }
+    ]
+  },
+  "instructions_to_main_agent": {
+    "setup": [
+      "Install 'lucide-react' for icons.",
+      "Install 'framer-motion' for the bouncy animations.",
+      "Update 'tailwind.config.js' with the 'Confetti Pop' colors and 'Fredoka' font family.",
+      "Add the Google Font link to 'index.html' or 'index.css'."
+    ],
+    "implementation_rules": [
+      "DO NOT use default Shadcn styling. Override it with the 'Visual Enhancers' defined above.",
+      "Use the 'hard' shadow class (shadow-[4px_4px_0px_0px_#000000]) on all main containers.",
+      "Ensure the background has the dot pattern defined in 'textures'.",
+      "For the 'Kid Profile', make it look like a trading card.",
+      "Use 'sonner' for toasts, but style them with black borders."
+    ],
+    "universal_guidelines": [
+      "Avoid gradients for backgrounds; use solid colors or patterns.",
+      "Don't center everything. Use asymmetry.",
+      "Make it fun! Add emojis in text labels if appropriate (e.g., 'Add Gift 🎁')."
+    ]
+  }
+}
