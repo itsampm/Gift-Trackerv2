@@ -13,6 +13,50 @@
     background-image: radial-gradient(#E5E5E5 1px, transparent 1px);
     background-size: 20px 20px;
   }
+  
+  /* Dark mode styles */
+  .dark body {
+    @apply bg-[#1a1a1a] text-[#e5e5e5];
+    background-image: radial-gradient(#333 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .dark .bg-background {
+    @apply bg-[#1a1a1a];
+  }
+  
+  .dark .bg-white {
+    @apply bg-[#2a2a2a];
+  }
+  
+  .dark .bg-card {
+    @apply bg-[#2a2a2a];
+  }
+  
+  .dark .text-foreground {
+    @apply text-[#e5e5e5];
+  }
+  
+  .dark .text-foreground\\/70 {
+    @apply text-[#a0a0a0];
+  }
+  
+  .dark .border-black {
+    @apply border-[#444];
+  }
+  
+  .dark .shadow-hard {
+    box-shadow: 4px 4px 0px 0px #444;
+  }
+  
+  .dark .shadow-\\[4px_4px_0px_0px_\\#000000\\] {
+    box-shadow: 4px 4px 0px 0px #444;
+  }
+  
+  .dark .shadow-\\[2px_2px_0px_0px_\\#000000\\] {
+    box-shadow: 2px 2px 0px 0px #444;
+  }
+  
   h1, h2, h3, h4, h5, h6 {
     @apply font-fredoka;
   }
@@ -23,11 +67,25 @@
     @apply rounded-full border-2 border-black font-bold px-6 py-3 shadow-[2px_2px_0px_0px_#000000] hover:translate-y-1 hover:shadow-none transition-all active:translate-y-1;
   }
   
+  .dark .candy-button {
+    @apply border-[#444];
+    box-shadow: 2px 2px 0px 0px #444;
+  }
+  
   .sticker-card {
     @apply bg-white border-2 border-black rounded-xl p-6 shadow-[4px_4px_0px_0px_#000000] hover:-rotate-1 transition-transform duration-300;
   }
   
+  .dark .sticker-card {
+    @apply bg-[#2a2a2a] border-[#444];
+    box-shadow: 4px 4px 0px 0px #444;
+  }
+  
   .chunky-input {
     @apply border-2 border-black rounded-lg px-4 py-3 focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:outline-none font-medium bg-white;
+  }
+  
+  .dark .chunky-input {
+    @apply bg-[#2a2a2a] border-[#444] text-[#e5e5e5];
   }
 }
