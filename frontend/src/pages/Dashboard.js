@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { Plus, Gift, Calendar, Cake } from "lucide-react";
+import { Plus, Gift, Calendar, Cake, Moon, Sun, ListChecks } from "lucide-react";
 import { toast } from "sonner";
 import AddKidModal from "../components/AddKidModal";
 import KidCard from "../components/KidCard";
@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
-export default function Dashboard() {
+export default function Dashboard({ darkMode, setDarkMode }) {
   const [kids, setKids] = useState([]);
   const [reminders, setReminders] = useState([]);
   const [showAddModal, setShowAddModal] = useState(false);
@@ -65,21 +65,47 @@ export default function Dashboard() {
         >
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2" data-testid="dashboard-title">
+              <h1 className="text-4xl md:text-5xl font-bold mb-2" data-testid="dashboard-title">
                 Gift Tracker 🎁
               </h1>
               <p className="text-lg text-foreground/70">Keep track of birthday & Christmas gifts for the little ones!</p>
             </div>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setShowAddModal(true)}
-              className="candy-button bg-primary text-white"
-              data-testid="add-kid-button"
-            >
-              <Plus className="inline mr-2" size={20} />
-              Add Kid
-            </motion.button>
+            <div className="flex gap-3">
+              {/* Dark Mode Toggle */}
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setDarkMode(!darkMode)}
+                className="candy-button bg-secondary text-foreground"
+                data-testid="dark-mode-toggle"
+              >
+                {darkMode ? <Sun className="inline" size={20} /> : <Moon className="inline" size={20} />}
+              </motion.button>
+              
+              {/* Christmas Checklist Button */}
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => navigate("/christmas")}
+                className="candy-button bg-success text-white"
+                data-testid="christmas-checklist-button"
+              >
+                <ListChecks className="inline mr-2" size={20} />
+                Christmas
+              </motion.button>
+              
+              {/* Add Kid Button */}
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setShowAddModal(true)}
+                className="candy-button bg-primary text-white"
+                data-testid="add-kid-button"
+              >
+                <Plus className="inline mr-2" size={20} />
+                Add Kid
+              </motion.button>
+            </div>
           </div>
         </motion.div>
 
