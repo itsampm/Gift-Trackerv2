@@ -80,8 +80,8 @@ export default function ChristmasChecklist() {
     }
   };
 
-  // Include 3 future years, current year, and 4 past years
-  const years = Array.from({ length: 8 }, (_, i) => currentYear + 3 - i);
+  // Include 10 future years, current year, and 5 past years (total 16 years)
+  const years = Array.from({ length: 16 }, (_, i) => currentYear + 10 - i);
   const kidsWithGifts = kids.map(kid => ({
     ...kid,
     hasGift: !!getChristmasGiftForKid(kid.id),
