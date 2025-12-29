@@ -147,18 +147,104 @@ export default function ChristmasChecklist() {
               <p className="text-lg text-foreground/70">Track who you've bought gifts for</p>
             </div>
             
-            {/* Year Selector */}
-            <select
-              value={selectedYear}
-              onChange={(e) => setSelectedYear(parseInt(e.target.value))}
-              className="chunky-input"
-              data-testid="year-selector"
-            >
-              {years.map(year => (
-                <option key={year} value={year}>{year}</option>
-              ))}
-            </select>
+            {/* Year Navigator */}
+            <div className="flex items-center gap-2">
+              {/* Previous Year Button */}
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={handlePrevYear}
+                className="p-2 bg-secondary rounded-lg border-2 border-black shadow-button hover:translate-y-1 hover:shadow-none transition-all"
+                data-testid="prev-year-button"
+              >
+                <ArrowLeft size={20} />
+              </motion.button>
+
+              {/* Current Year Display */}
+              <div className="flex items-center gap-2">
+                <div className="chunky-input px-6 py-2 text-center font-bold text-xl min-w-[120px]" data-testid="current-year-display">
+                  {selectedYear}
+                </div>
+                
+                {/* Jump to Year Button */}
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setShowCustomYear(!showCustomYear)}
+                  className="p-2 bg-accent text-white rounded-lg border-2 border-black shadow-button hover:translate-y-1 hover:shadow-none transition-all"
+                  data-testid="jump-to-year-button"
+                  title="Jump to any year"
+                >
+                  <Calendar size={20} />
+                </motion.button>
+              </div>
+
+              {/* Next Year Button */}
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={handleNextYear}
+                className="p-2 bg-secondary rounded-lg border-2 border-black shadow-button hover:translate-y-1 hover:shadow-none transition-all"
+                data-testid="next-year-button"
+              >
+                <ArrowLeft size={20} className="rotate-180" />
+              </motion.button>
+            </div>
           </div>
+
+          {/* Custom Year Input */}
+          {showCustomYear && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="mb-4 bg-white border-2 border-black rounded-lg p-4 shadow-hard"
+            >
+              <div className="flex flex-col gap-3">
+                <label className="font-bold text-sm">Jump to Year (2000-2200):</label>
+                <div className="flex gap-2">
+                  <input
+                    type="number"
+                    min="2000"
+                    max="2200"
+                    value={customYearInput}
+                    onChange={(e) => setCustomYearInput(e.target.value)}
+                    onKeyPress={(e) => e.key === 'Enter' && handleCustomYearSubmit()}
+                    className="chunky-input flex-1"
+                    placeholder="Enter year (e.g., 2050)"
+                    data-testid="custom-year-input"
+                  />
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={handleCustomYearSubmit}
+                    className="candy-button bg-primary text-white"
+                    data-testid="submit-custom-year"
+                  >
+                    Go
+                  </motion.button>
+                </div>
+                
+                {/* Quick Year Shortcuts */}
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-sm text-foreground/70">Quick jump:</span>
+                  {quickYears.map(year => (
+                    <button
+                      key={year}
+                      onClick={() => {
+                        setSelectedYear(year);
+                        setShowCustomYear(false);
+                      }}
+                      className="px-3 py-1 bg-secondary/50 border-2 border-black rounded-lg text-sm font-medium hover:bg-secondary transition-colors"
+                      data-testid={`quick-year-${year}`}
+                    >
+                      {year}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
 
           {/* Progress Bar */}
           <div className="bg-white border-2 border-black rounded-lg p-4 shadow-hard">
