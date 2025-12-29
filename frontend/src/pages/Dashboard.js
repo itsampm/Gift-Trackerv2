@@ -138,7 +138,7 @@ export default function Dashboard() {
             </button>
           </motion.div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-testid="kids-grid">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4" data-testid="kids-grid">
             {kids.map((kid, index) => (
               <KidCard
                 key={kid.id}
